@@ -1,0 +1,16 @@
+#Provide the apache version and configuration lines to be changed 
+
+
+# Apache Version
+Apache/2.4.7 (Ubuntu)
+
+
+# Configuration file change(Hint: the change has to be made in /etc/apache2/conf-enabled/security.conf)
+ServerTokens OS -> ServerTokens Prod
+ServerSignature On -> ServerSignature Off
+
+To confuse the attacker, we can keep the version banner but change it to a fake value like: "Server: Microsoft-IIS/8.0"
+as suggested by user "kabirbaidhya"
+
+
+

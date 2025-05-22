@@ -1,0 +1,16 @@
+# Provide the backdoor entries created by the nation state attackers. 
+
+# Rouge Username
+darklord
+
+# Backdoor process name
+Remotesec, PID 1062
+
+# Backdoor port number the above process is listening on
+Protocol: TCP
+Port:     56565
+
+# Reason for suspicioun
+The process is running from the tmp directory, which is usually used to hide malicious processes.
+And because it's listening on a non-standard port.
+

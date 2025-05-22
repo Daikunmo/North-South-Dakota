@@ -1,0 +1,30 @@
+# provide the additional filename that you have identified as a potentially suspicious file. Also provide details about the Command and control Domain which is hardcoded inside this file. 
+
+# Filename
+SSH-One
+
+# Callout domain
+
+Horrible formatting and readability, just horrible.
+
+The first thing the code does when run is flushing all the iptables rules, which is a huge security risk.
+Then stopping iptables entirely.
+Then it adds some execution permission commands to /etc/rc.local.
+
+Then the code assigns some variables.
+m = SSH-T, seems to be the name of a process.
+script = SSH-One, which is the name of the script.
+hfs_m and hfs_s seem to be links to a sketchy website, same domain and ports but different subdirectories.
+
+Then it removes anything related to to SSH-T in the /etc folder.
+
+Then it enters a while true loop.
+to summarise what's happening inside, it checks if a process called SSH-T.
+If the result exists, it sleeps for 10 seconds.
+If it doesn't, it looks for a file in the /tmp directory with the name of SSH-T.
+If it does find said file, it tries to execute it, or run it.
+If said file doesn't exist, it downloads the suspicous link which is called hfs_m, might be a script, no, definetly.
+After that, it gives execution permission to the downloaded script and executes it.
+
+Then it does the same thing with itself, with minor changes.
+Like hfs_m being changed to hfs_s.
